@@ -1,6 +1,6 @@
 <?php
 /*
-Example connection to mysql to pull back a few records (table and records for example are below)
+Example connection to mysql to pull back a single record. Data for database:
 CREATE TABLE example_table(  
     id int NOT NULL PRIMARY KEY AUTO_INCREMENT COMMENT 'Primary Key',
     animal VARCHAR(100),
@@ -28,7 +28,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "SELECT id, animal, color_hex as color, legs FROM example_table"; // Example: fetching from a 'users' table
+$sql = "SELECT id, animal, color_hex as color, legs FROM example_table"; 
 $result = $conn->query($sql);
 
 $records = array();
@@ -38,7 +38,7 @@ if ($result->num_rows > 0) {
     }
 }
 
-#header('Content-Type: application/json');
+
 echo json_encode($records);
 
 $conn->close();

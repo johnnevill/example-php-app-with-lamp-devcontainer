@@ -14,6 +14,7 @@ INSERT INTO example_table (animal, color_hex, legs) VALUES ('spider','black',8);
 */
 
 $inputAnimal=$_GET['animal'];
+
 header('Content-Type: application/json');
 
 $servername = "db";
@@ -34,14 +35,14 @@ $stmt->bind_param('s', $inputAnimal);
 $stmt->execute();
 $result = $stmt->get_result();
 
-#bork need fix
+
 $data = [];
 while ($row = $result->fetch_assoc()) {
     $data[] = $row;
 }
 
 
-#header('Content-Type: application/json');
+
 echo json_encode($data);
 
 $stmt->close();
