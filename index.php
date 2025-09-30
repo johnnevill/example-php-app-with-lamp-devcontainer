@@ -63,7 +63,7 @@
                     if (data && data.length > 0) {
                         data.forEach(record => {
                             const p = document.createElement('p');
-                            p.textContent = `ID: ${record.id}, Animal: ${record.animal}, Color: ${record.color}`; 
+                            p.textContent = `ID: ${record.id}, Animal: ${record.animal}, Color: ${record.color}, Legs: ${record.legs}`; 
                             container.appendChild(p);
                         });
                     } else {
