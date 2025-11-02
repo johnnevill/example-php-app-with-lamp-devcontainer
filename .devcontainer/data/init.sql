@@ -1,4 +1,3 @@
-CREATE DATABASE devdb;
 USE devdb;
 CREATE TABLE example_table(  
     id int NOT NULL PRIMARY KEY AUTO_INCREMENT COMMENT 'Primary Key',
